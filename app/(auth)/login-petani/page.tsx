@@ -54,14 +54,14 @@ export default function LoginPetaniPage() {
 
                 <form onSubmit={handleLogin} className="space-y-4">
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">ID Petani</label>
+                        <label className="block text-sm font-medium text-gray-700">Email Petani</label>
                         <input
                             type="text"
                             required
                             value={farmerId}
                             onChange={(e) => setFarmerId(e.target.value)}
-                            className="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none"
-                            placeholder="Contoh: P001"
+                            className="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none text-slate-500"
+                            placeholder="Contoh: example@email.com"
                         />
                     </div>
                     <div>
@@ -71,7 +71,7 @@ export default function LoginPetaniPage() {
                             required
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none"
+                            className="mt-1 w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none text-slate-500"
                         />
                     </div>
                     <button

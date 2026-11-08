@@ -77,10 +77,10 @@ export default function DashboardPage() {
             </div>
 
             <div className="bg-white rounded-xl border shadow-sm overflow-hidden">
-                <div className="p-4 border-b font-bold text-gray-800">Transaksi Terbaru</div>
+                <div className="p-4 border-b font-bold text-slate-500">Transaksi Terbaru</div>
                 <div className="overflow-x-auto">
                     <table className="w-full text-left text-sm">
-                        <thead className="bg-gray-50 border-b text-gray-600">
+                        <thead className="bg-gray-50 border-b text-slate-500">
                             <tr>
                                 <th className="p-3">No. Transaksi</th>
                                 <th className="p-3">Petani</th>
