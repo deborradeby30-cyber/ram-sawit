@@ -8,7 +8,8 @@ export default function HargaPage() {
     const supabase = createClient();
     const [prices, setPrices] = useState<any[]>([]);
     const [price, setPrice] = useState<number>(0);
-    const [date, setDate] = useState<string>(new Date().toISOString().slice(0, 10));
+    // 1. Inisialisasi string kosong terlebih dahulu agar aman saat prerender
+    const [date, setDate] = useState<string>('');
 
     const loadPrices = async () => {
         const { data } = await supabase.from('prices').select('*').order('effective_date', { ascending: false });
@@ -16,6 +17,8 @@ export default function HargaPage() {
     };
 
     useEffect(() => {
+        // 2. Set tanggal hari ini di dalam useEffect (hanya berjalan di browser/client)
+        setDate(new Date().toISOString().slice(0, 10));
         loadPrices();
     }, []);
 
