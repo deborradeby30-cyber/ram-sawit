@@ -17,15 +17,13 @@ export default function LoginPetaniPage() {
         setLoading(true);
         setError('');
 
-        // Mapping ID Petani ke internal email Supabase Auth (misal: p001@petani.ram)
-        const email = `${farmerId.toLowerCase().trim()}@petani.ram`;
-
         const { data, error } = await supabase.auth.signInWithPassword({
-            email,
+            email: farmerId,
             password,
         });
 
         if (error) {
+            console.log(error);
             setError('ID Petani atau Password salah.');
             setLoading(false);
             return;
